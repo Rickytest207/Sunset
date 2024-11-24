@@ -86,9 +86,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Session</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add basic styling */
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info-btn {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .box-container {
+            text-align: center;
+        }
+        .definition-box {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .definition-box.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
+    <!-- Buttons -->
     <section class="info-session">
         <div class="button-container">
             <button class="info-btn" onclick="toggleDefinition('who')">Who</button>
@@ -96,8 +125,9 @@
             <button class="info-btn" onclick="toggleDefinition('where')">Where</button>
             <button class="info-btn" onclick="toggleDefinition('when')">When</button>
         </div>
+
+        <!-- Definition Boxes -->
         <div class="box-container">
-            <!-- Definition boxes -->
             <div class="definition-box" id="who-box">
                 <p>Who: Refers to the people involved in the context.</p>
             </div>
@@ -112,6 +142,32 @@
             </div>
         </div>
     </section>
+
+    <!-- JavaScript -->
+    <script>
+        let currentlyActiveBox = null;
+
+        function toggleDefinition(id) {
+            const targetBox = document.getElementById(`${id}-box`);
+
+            // If the clicked box is already active, toggle it off
+            if (currentlyActiveBox === targetBox) {
+                targetBox.classList.remove('active');
+                currentlyActiveBox = null; // Reset the active box
+            } else {
+                // Hide any previously active box
+                if (currentlyActiveBox) {
+                    currentlyActiveBox.classList.remove('active');
+                }
+
+                // Show the clicked box
+                targetBox.classList.add('active');
+                currentlyActiveBox = targetBox;
+            }
+        }
+    </script>
+</body>
+</html>
     <script src="script.js"></script>
 </body>
 </html>   
