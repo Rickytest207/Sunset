@@ -1,4 +1,159 @@
 /* General styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #ff4500;
+}
+
+/* Volunteering Moments Section */
+.volunteering-moments {
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.volunteering-moments h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.volunteering-moments p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.call-to-action {
+    margin-top: 30px;
+}
+
+.call-to-action h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.call-to-action p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff4500;
+}
+
+/* Explanations Section */
 .explanations {
     padding: 40px 20px;
     background-color: #f8f8f8;
@@ -110,65 +265,6 @@
     border: none;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
-    .gallery-item {
-        width: calc(50% - 20px);
-    }
-
-    .volunteering-moments h2, .call-to-action h3 {
-        font-size: 1.8em;
-    }
-
-    .explanation-point h3 {
-        font-size: 1.7em;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .hero-button {
-        padding: 8px 16px;
-    }
-
-    .gallery-item {
-        width: 100%;
-    }
-
-    .explanation-point {
-        text-align: center;
-        padding: 20px;
-    }
-    
-    .definition-box {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5em;
-    }
-
-    .hero p {
-        font-size: 0.9em;
-    }
-
-    .hero-button {
-        padding: 6px 12px;
-    }
-}
 /* Footer Styles */
 footer {
     background-color: #2C3E50;
@@ -241,14 +337,50 @@ footer {
     margin: 5px 0;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .gallery-item {
+        width: calc(50% - 20px);
     }
 
-    .footer-button {
-        margin: 10px 0;
+    .volunteering-moments h2, .call-to-action h3 {
+        font-size: 1.8em;
+    }
+
+    .explanation-point h3 {
+        font-size: 1.7em;
     }
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .hero-button {
+        padding: 8px 16px;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    .explanation-point {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .definition-box {
+        width: 90%;
+    }
+
+    .footer-message h2 {
+        font-size: 1.5em;
