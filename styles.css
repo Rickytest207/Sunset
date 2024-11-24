@@ -195,7 +195,7 @@ nav a {
     flex: 1;
     max-width: 220px;
     text-align: center;
-    padding: 0;
+    padding: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -209,26 +209,23 @@ nav a {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Button Styling (Covers Entire Box) */
+/* Button Styling */
 .info-point button {
-    display: block; /* Ensures the button takes up full width */
-    width: 100%; /* Matches the white box width */
-    height: 100%; /* Makes the button cover the full box */
     font-size: 1.2rem;
     font-weight: bold;
     color: #38a3a5;
-    background: transparent; /* No background */
+    background: transparent;
     border: none;
     cursor: pointer;
-    padding: 15px;
-    transition: color 0.3s ease;
+    padding: 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
     outline: none;
-    border-radius: 10px; /* Matches the white box border */
 }
 
-/* Remove hover background effect */
 .info-point button:hover {
-    color: #22577a; /* Subtle hover effect for text only */
+    border-color: #57cc99;
+    color: #22577a;
 }
 
 /* Definition Paragraph */
@@ -257,7 +254,6 @@ nav a {
         transform: scale(1);
     }
 }
-
 .register {
     display: flex;
     justify-content: space-between;
