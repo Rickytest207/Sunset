@@ -18,3 +18,18 @@ function toggleTooltip(event, word) {
     // Toggle the tooltip visibility and opacity
     tooltipContainer.classList.toggle('show');
 }
+function toggleDefinition(id) {
+    // Get all definition elements
+    const definitions = document.querySelectorAll(".definition");
+
+    // Loop through definitions and handle visibility
+    definitions.forEach((definition) => {
+        if (definition.id === id) {
+            // Toggle the clicked definition
+            definition.style.display = definition.style.display === "block" ? "none" : "block";
+        } else {
+            // Hide all other definitions
+            definition.style.display = "none";
+        }
+    });
+}
