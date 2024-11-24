@@ -22,7 +22,7 @@ function toggleDefinition(id) {
     // Get all definition elements
     const definitions = document.querySelectorAll(".definition");
 
-    // Loop through definitions and handle visibility
+    // Loop through definitions and hide all except the clicked one
     definitions.forEach((definition) => {
         if (definition.id === id) {
             // Toggle the clicked definition
@@ -32,4 +32,6 @@ function toggleDefinition(id) {
             definition.style.display = "none";
         }
     });
+}
+
 }
