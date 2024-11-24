@@ -184,24 +184,23 @@ nav a {
     justify-content: space-around;
     align-items: flex-start;
     padding: 40px;
-    background: linear-gradient(135deg, #c7f9cc, #80ed99);
+    background: linear-gradient(135deg, #c7f9cc, #80ed99); /* Gradient background */
     gap: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
 /* Individual Point Container */
 .info-point {
-    flex: 1 1 calc(25% - 20px); /* 4 items per row with gap */
-    max-width: calc(25% - 20px); /* Matches the flex-basis */
+    flex: 1;
+    max-width: 220px;
     text-align: center;
+    padding: 0;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: "Poppins", sans-serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px; /* Adds spacing between items */
 }
 
 /* Hover Effect on Points */
@@ -212,23 +211,24 @@ nav a {
 
 /* Button Styling (Covers Entire Box) */
 .info-point button {
-    display: block;
-    width: 100%;
-    height: 100%;
+    display: block; /* Ensures the button takes up full width */
+    width: 100%; /* Matches the white box width */
+    height: 100%; /* Makes the button cover the full box */
     font-size: 1.2rem;
     font-weight: bold;
     color: #38a3a5;
-    background: transparent;
+    background: transparent; /* No background */
     border: none;
     cursor: pointer;
     padding: 15px;
     transition: color 0.3s ease;
     outline: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Matches the white box border */
 }
 
+/* Remove hover background effect */
 .info-point button:hover {
-    color: #22577a;
+    color: #22577a; /* Subtle hover effect for text only */
 }
 
 /* Definition Paragraph */
@@ -237,7 +237,7 @@ nav a {
     line-height: 1.5;
     margin-top: 15px;
     padding: 10px;
-    background: #f0fff4;
+    background: #f0fff4; /* Light background for the definition */
     border: 1px solid #c7f9cc;
     border-radius: 8px;
     display: none; /* Hidden by default */
@@ -255,37 +255,6 @@ nav a {
     to {
         opacity: 1;
         transform: scale(1);
-    }
-}
-
-/* Media Queries for Responsiveness */
-
-/* Medium screens (tablets, large phones) */
-@media (max-width: 768px) {
-    .info-point {
-        flex: 1 1 calc(50% - 20px); /* 2 items per row */
-        max-width: calc(50% - 20px);
-    }
-}
-
-/* Small screens (mobile phones) */
-@media (max-width: 480px) {
-    .volunteer-info {
-        padding: 20px; /* Adjust padding for smaller screens */
-    }
-
-    .info-point {
-        flex: 1 1 100%; /* 1 item per row */
-        max-width: 100%;
-    }
-
-    .info-point button {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-        padding: 10px; /* Reduce padding */
-    }
-
-    .definition {
-        font-size: 0.9rem; /* Adjust text size for readability */
     }
 }
 
