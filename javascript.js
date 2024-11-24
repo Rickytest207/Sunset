@@ -19,19 +19,11 @@ function toggleTooltip(event, word) {
     tooltipContainer.classList.toggle('show');
 }
 function toggleDefinition(id) {
-    // Get all definition elements
-    const definitions = document.querySelectorAll(".definition");
-
-    // Loop through definitions and hide all except the clicked one
-    definitions.forEach((definition) => {
-        if (definition.id === id) {
-            // Toggle the clicked definition
-            definition.style.display = definition.style.display === "block" ? "none" : "block";
-        } else {
-            // Hide all other definitions
-            definition.style.display = "none";
-        }
-    });
+    const definition = document.getElementById(id);
+    if (definition.style.display === "block") {
+        definition.style.display = "none";
+    } else {
+        definition.style.display = "block";
+    }
 }
 
-}
