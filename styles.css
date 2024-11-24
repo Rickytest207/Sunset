@@ -243,7 +243,11 @@ nav a {
     display: none; /* Hidden by default */
     animation: fadeIn 0.3s ease-in-out;
     color: #22577a;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+
+.show {
+    display: block;
+}
 }
 
 /* Fade-in Animation */
