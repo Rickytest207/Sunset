@@ -1,47 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Functionality for showing the definition box on click
-    const header = document.getElementById('volunteers-header');
-    const definitionBox = document.getElementById('volunteers-definition');
+function toggleTooltip(event, word) {
+    // Get the tooltip container
+    var tooltipContainer = document.getElementById(word + '-tooltip');
     
-    header.addEventListener('click', function() {
-        if (definitionBox.style.display === 'block') {
-            definitionBox.style.display = 'none';
-        } else {
-            definitionBox.style.display = 'block';
-        }
-    });
+    // Get the word element (clicked word)
+    var wordElement = event.target;
 
-    // Functionality for autoplaying videos when they come into view
-    const videos = document.querySelectorAll('video, iframe');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
+    // Get the position of the word element on the page
+    var rect = wordElement.getBoundingClientRect();
 
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const video = entry.target;
-                if (video.tagName === 'IFRAME') {
-                    video.contentWindow.postMessage('{"method":"play"}', '*');
-                } else {
-                    video.play();
-                }
-            } else {
-                const video = entry.target;
-                if (video.tagName === 'IFRAME') {
-                    video.contentWindow.postMessage('{"method":"pause"}', '*');
-                } else {
-                    video.pause();
-                }
-            }
-        });
-    };
+    // Get the tooltip box inside the container
+    var tooltipBox = tooltipContainer.querySelector('.tooltip-box');
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    // Position the tooltip relative to the clicked word
+    tooltipContainer.style.top = (rect.top + window.scrollY + rect.height) + 'px'; // Position below the word
+    tooltipContainer.style.left = (rect.left + window.scrollX) + 'px'; // Position aligned with the word
 
-    videos.forEach(video => {
-        observer.observe(video);
-    });
-});
+    // Toggle the tooltip visibility and opacity
+    tooltipContainer.classList.toggle('show');
+}
